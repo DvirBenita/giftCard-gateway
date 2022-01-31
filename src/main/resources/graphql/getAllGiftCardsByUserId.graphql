@@ -1,0 +1,10 @@
+query getAllGiftCardsByUserId($userId: String!){
+    getAllGiftCardsByUserId(userId:$userId){
+        privateId
+        timestamp
+        amount
+        userId
+    }
+}
+
+

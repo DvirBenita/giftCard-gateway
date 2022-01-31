@@ -1,0 +1,5 @@
+mutation addGiftCard($privateId: String!,$userId:String!,$amount: Float!){
+    addGiftCard(privateId:$privateId,userId: $userId,amount: $amount)
+}
+
+

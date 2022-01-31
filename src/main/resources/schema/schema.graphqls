@@ -1,0 +1,25 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation{
+    addGiftCard(privateId:String!, userId:String!,amount:Float!):Boolean
+    deleteGiftCard(privateId:String!):Boolean
+}
+type Query {
+    getGiftCard(privateId:String!):GiftCard
+    getAllGiftCardsByUserId(userId:String!):[GiftCard]
+}
+
+type GiftCard{
+
+    privateId:String!
+    timestamp:String!
+    amount:Float!
+    userId:String!
+}
+
+
+
+

@@ -1,0 +1,10 @@
+query getGiftCard($privateId: String!){
+    getGiftCard(privateId:$privateId){
+        privateId
+        timestamp
+        amount
+        userId
+    }
+}
+
+

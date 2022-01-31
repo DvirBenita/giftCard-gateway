@@ -1,0 +1,5 @@
+mutation deleteGiftCard($privateId: String!){
+    deleteGiftCard(privateId:$privateId)
+}
+
+
