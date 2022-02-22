@@ -6,7 +6,7 @@ import java.io.IOException;
 
 @Slf4j
 public final class GraphqlSchemaReaderUtil {
-
+  // Extract the file from the files /resources/graphql
   public static String getSchemaFromFileName(final String filename) throws IOException {
     System.out.println(filename);
     return new String(

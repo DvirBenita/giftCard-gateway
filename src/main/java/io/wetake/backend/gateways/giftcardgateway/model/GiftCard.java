@@ -13,6 +13,14 @@ public class GiftCard {
 
   private String privateId;
   private long timestamp;
-  private Float amount;
+  private float amount;
   private String userId;
+  private Color color;
+  private String token;
+  private String url;
+  private boolean used;
+
+  public enum Color {
+    Gold
+  }
 }

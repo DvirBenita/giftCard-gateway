@@ -1,5 +1,14 @@
-mutation addGiftCard($privateId: String!,$userId:String!,$amount: Float!){
-    addGiftCard(privateId:$privateId,userId: $userId,amount: $amount)
+mutation addGiftCard($privateId: String!,$userId:String!,$amount: Float!,$color:Color!,$giftcardName:String!){
+    addGiftCard(privateId:$privateId,userId: $userId,amount: $amount,color: $color,giftcardName:$giftcardName){
+        privateId
+        color
+        timestamp
+        userId
+        amount
+        url
+        used
+
+    }
 }
 
 

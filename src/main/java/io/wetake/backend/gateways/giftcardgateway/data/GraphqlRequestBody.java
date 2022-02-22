@@ -12,6 +12,7 @@ import lombok.Setter;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @AllArgsConstructor
 @NoArgsConstructor
+// This is a class that represents a graphql query sent with a http client
 public class GraphqlRequestBody {
 
   private String query;

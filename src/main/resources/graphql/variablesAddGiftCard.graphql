@@ -1,4 +1,7 @@
-{"privateId" : "privateIdTemp",
+{
+"privateId" : "privateIdTemp",
 "userId" : "userIdTemp",
-"amount" : "amountTemp"
+"amount" : "amountTemp",
+"color" : "colorTemp",
+"giftcardName" : "giftcardNameTemp"
 }
