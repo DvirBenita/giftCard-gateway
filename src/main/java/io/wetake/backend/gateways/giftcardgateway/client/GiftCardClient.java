@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class GiftCardClient {
   public static String url;
   @Autowired private ConfigService configService;
   @Autowired private Gson gson;
+  @Autowired private RestTemplate restTemplate;
   // add gift card
   public GiftCard addGiftCard(
       String privateId, String userId, float amount, GiftCard.Color color, String giftCardName)
@@ -164,5 +166,11 @@ public class GiftCardClient {
       arrayList.add(gson.fromJson(obj.toString(), GiftCard.class));
     }
     return arrayList;
+  }
+
+  public String editGiftCard(GiftCard giftCard) throws IOException {
+    giftCardServicePort = this.configService.getByKey("giftCardServicePort");
+    url = "http://localhost:" + giftCardServicePort + "/giftCard";
+    return restTemplate.postForObject(url + "/edit", giftCard, String.class);
   }
 }

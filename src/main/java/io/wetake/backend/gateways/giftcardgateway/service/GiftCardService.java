@@ -51,7 +51,7 @@ public class GiftCardService {
     File giftcard = changeAmountAndColor(amount, color);
 
     // upload giftcard via storage gateway
-    // upload(giftcard);
+    upload(giftcard);
 
     GiftCard ans = null;
     try {
@@ -126,6 +126,20 @@ public class GiftCardService {
     List<GiftCard> ans = null;
     try {
       ans = client.getAllGiftCardsByUserId(userId);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return ans;
+  }
+
+  public String editGiftCard(GiftCard giftCard) {
+
+    GiftCardClient client = (GiftCardClient) this.context.getBean("giftCardClient");
+
+    String ans = "null";
+
+    try {
+      ans = client.editGiftCard(giftCard);
     } catch (IOException e) {
       e.printStackTrace();
     }
